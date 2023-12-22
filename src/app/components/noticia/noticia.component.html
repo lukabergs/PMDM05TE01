@@ -1,0 +1,26 @@
+ <ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{ noticia.source.name }}</ion-card-subtitle>
+    <ion-card-title>{{ noticia.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-img [src]="noticia.urlToImage"></ion-img>
+    <ion-text>{{ noticia.description }}</ion-text>
+    <ion-item>
+      <ion-text><a [href]="noticia.url">Leer</a></ion-text>
+      <ion-button
+        [id]="noticia.url"
+        fill="clear"
+        >
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <ion-alert
+        [trigger]="noticia.url"
+        header="Confirmar"
+        message="Borrar noticia?"
+        [buttons]="botones"
+      ></ion-alert>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

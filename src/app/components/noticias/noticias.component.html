@@ -1,0 +1,13 @@
+<ion-list *ngFor="let noticia of gestionNoticias.getNoticias()">
+  <ion-item>
+    <ion-checkbox [checked]="noticia.checked" slot="start" (ionChange)="gestionNoticias.seleccionarNoticia(noticia)"></ion-checkbox>
+    <ion-label>
+      <ion-text>
+        <h2>{{ noticia.source.name }}</h2>
+      </ion-text>
+      <ion-text>
+        <p>{{ noticia.title }}</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-list>
