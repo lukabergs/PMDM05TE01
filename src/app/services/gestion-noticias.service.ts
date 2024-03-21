@@ -15,7 +15,7 @@ export class GestionNoticiasService {
   }
 
   getNoticias() {
-    return this.noticias.articles;
+    return this.noticias ? this.noticias.articles : [];
   }
 
   getNoticiasSeleccionadas () {
